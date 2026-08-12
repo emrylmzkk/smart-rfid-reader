@@ -1,0 +1,9 @@
+services:
+  rfid-keyboard:
+    build: .
+    container_name: rfid-keyboard-service
+    restart: always
+    privileged: true
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - /dev/uinput:/dev/uinput
