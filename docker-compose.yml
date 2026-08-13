@@ -5,5 +5,7 @@ services:
     restart: always
     privileged: true
     volumes:
-      - /dev/bus/usb:/dev/bus/usb
+      # Host makinedeki pcscd soketini container'a bağlıyoruz
+      - /var/run/pcscd/pcscd.comm:/var/run/pcscd/pcscd.comm
       - /dev/uinput:/dev/uinput
+      - /dev/input:/dev/input
